@@ -11,7 +11,7 @@
 int main() {
 
 
-	Log ("Hello World\n");
-  
+	Log("Hello World\n");
+
 	std::cin.get();
 }
