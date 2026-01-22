@@ -69,5 +69,7 @@ int main()
 
 	auto test = MYTEST(10, 20);
 
+	std::cout << test << std::endl;
+
 	std::cin.get();
 }

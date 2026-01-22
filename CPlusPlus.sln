@@ -13,7 +13,7 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Reference", "Reference\Refe
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "array2", "Array\Array.vcxproj", "{54137113-FE50-40AC-83F7-9244500A4B28}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "String", "String\String.vcxproj", "{99F59F71-43D4-400C-BF78-421A306866E2}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "String1", "String\String.vcxproj", "{99F59F71-43D4-400C-BF78-421A306866E2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
