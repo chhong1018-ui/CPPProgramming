@@ -54,10 +54,10 @@ int main()
 	std::cout << testString << "\n";
 
 	// 문자 배열도 가능
-	char buffer[7] 
+	char buffer[7]
 		= { 'H', 'o', 'n', 'g', 'c', 'h', '\0' };
 	std::cout << buffer << "\n";
-	
+
 	// 객체 기반으로 문자열 사용.
 	Player player("RonnieJ");
 
@@ -70,6 +70,6 @@ int main()
 	auto test = MYTEST(10, 20);
 
 	std::cout << test << std::endl;
-
+	
 	std::cin.get();
 }
