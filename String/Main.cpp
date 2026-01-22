@@ -1,5 +1,10 @@
 ﻿#include <iostream>
 //#include <string>
+#include <Windows.h>
+//<tchar.h>
+
+#define MYTEXT(value) L##value
+#define MYTEST(value1, value2) value1##value2
 
 // 클래스 내부에서 문자열을 다루기.
 class Player
@@ -55,6 +60,14 @@ int main()
 	
 	// 객체 기반으로 문자열 사용.
 	Player player("RonnieJ");
+
+	// wide-Character
+	//const wchar_t* wideString = L"Hello wide string";
+	const wchar_t* wideString = MYTEXT("Hello wide string");
+
+	std::wcout << wideString << TEXT("\n");
+
+	auto test = MYTEST(10, 20);
 
 	std::cin.get();
 }
