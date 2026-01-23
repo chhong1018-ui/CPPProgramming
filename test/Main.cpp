@@ -8,9 +8,8 @@
 // F12, Ctrl + -
 // Ctrl + 방향키 좌우
 // Alt + Shift
-int main() {
-
-
+int main()
+{
 	Log("Hello World\n");
 
 	std::cin.get();

@@ -8,7 +8,7 @@ int main()
 	player1.Move(5, 2);
 
 	// Èü.
-	Player* player2 = new Player();
+	Player* player2 = new Player("Hong");
 	player2->Move(3, 1);
 	//(*player2).Move(3, 1);
 	delete player2;

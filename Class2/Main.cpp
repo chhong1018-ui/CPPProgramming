@@ -66,5 +66,8 @@ int main()
 	player2->Move(3, 1);
 	//(*player2).Move(3, 1);
 
+	delete player2;
+	player2 = nullptr;
+
 	std::cin.get();
 }
