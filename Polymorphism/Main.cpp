@@ -4,11 +4,30 @@
 // 무지성(무조건)으로 문자열로 변환함.
 #define NAME(x) #x
 
-class Entity
+#define PURE = 0
+
+// 순수 가상 함수를 가지는 클래스.
+// 인터페이스.
+// 순수 가상 함수만 가져야 함.(권장사항)
+// public 이어야 함.
+class NameInterface
+{
+public:
+	// 순수 가상 함수(pure).
+	// 순수 가상 함수 -> 구현을 해야 하는 강제성.
+	virtual const char* GetName() const = 0;
+	//virtual const char* GetName() const PURE;
+};
+
+class Entity : public NameInterface
 {
 public:
 	// const char* GetName() const { return "Entity"; }
-	virtual const char* GetName() const { return NAME(Entity); }
+	//virtual const char* GetName() const { return NAME(Entity); }
+	virtual const char* GetName() const override 
+	{ 
+		return NAME(Entity);
+	}
 };
 
 class Player : public Entity
@@ -53,7 +72,9 @@ int main()
 	Player* player = new Player("Hong");
 	//Entity* player = new Player("Hong");
 	std::cout << player->GetName() << "\n";
-	entities[1] = player;
+	//entities[1] = player;
+
+	//NameInterface* test = new NameInterface(); 불가능.
 
 	delete entity;
 	delete player;
