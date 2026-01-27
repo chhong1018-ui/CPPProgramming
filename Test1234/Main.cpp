@@ -29,11 +29,11 @@ public:
 
 int main()
 {
+	Person* person1 = new Person();
+	Person* person2 = new Student();
 	Person* person3 = new PartTimeStudent();
-	person3->Sleep();
 
-	PartTimeStudent* person1 = new PartTimeStudent();
-	person1->Work();
-	//person3->Study();  // 오류 발생.
-	//person3->Work();   // 오류 발생.
+	person1->Sleep();
+	person2->Sleep();
+	person3->Sleep();
 }
