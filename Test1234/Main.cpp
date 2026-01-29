@@ -4,13 +4,19 @@ int main()
 {
 	char buffer[256];
 	FILE* file = nullptr;
-	fopen_s(&file, "Test.txt", "rt");
+	fopen_s(&file, "Test.txt", "rb");
 	if (file != nullptr)
 	{
-		while (!feof(file))
+		FILE* newFile = nullptr;
+		fopen_s(&newFile, "Test2.txt", "wb");
+		if (newFile = nullptr)
 		{
-			fgets(buffer, 256, file);
-			std::cout << buffer;
+			while (!feof(file))
+			{
+				size_t readSize = fread(buffer, sizeof(char), 256, file);
+				fwrite(buffer, 1, readSize, newFile);
+			}
+			fclose(newFile);
 		}
 		fclose(file);
 	}

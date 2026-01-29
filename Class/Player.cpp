@@ -2,9 +2,6 @@
 #include <iostream>
 
 // 기본값 설정/자원 할당.
-Player::Player()
-{
-}
 
 Player::player(const char* inName)
 {

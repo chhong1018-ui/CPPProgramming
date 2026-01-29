@@ -1,3 +1,5 @@
+#include "Player.h"
+#include "Player.h"
 #include <iostream>
 
 // Å¬·¡½º
@@ -26,6 +28,14 @@ public:
 
 	{
 		std::cout << "Player() called\n";
+	}
+
+	void Player::Serialize(const char* path)
+	{
+	}
+
+	void Player::Deserialize(const char* path)
+	{
 	}
 
 	~Player()
