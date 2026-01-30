@@ -4,17 +4,17 @@
 Player::Player()
 	: Player(0, 0, 0.0f)
 {
-
 }
+
 Player::Player(int id, int score, float attack)
 	: id(id), score(score), attack(attack)
 {
-
 }
+
 Player::~Player()
 {
-
 }
+
 // 직렬화 (파일에 쓰기).
 void Player::Serialize(const char* path)
 {
@@ -31,21 +31,21 @@ void Player::Serialize(const char* path)
 	}
 
 	// 파일에 저장할 데이터 만들기.
-	char outputData[256] = {};
-	sprintf_s(
-		outputData,
-		256,
-		"id=%d score=%d attack=%f",
-		id, score, attack
-	);
+	//char outputdata[256] = {};
+	//sprintf_s(
+	//	outputdata,
+	//	256,
+	//	"id=%d score=%d attack=%f",
+	//	id, score, attack
+	//);
 
 	//// 데이터 정리.
-	size_t length = strlen(outputData);
-	memset(outputData + length, 0, 256 - length);
+	//size_t length = strlen(outputdata);
+	//memset(outputdata + length, 0, 256 - length);
 
 	// 파일에 데이터 기록.
-	size_t writtenSize
-		= fwrite(outputData, sizeof(char), 256, file);
+	//size_t writtensize
+	//	= fwrite(outputdata, sizeof(char), 256, file);
 
 	fprintf_s(file, "id=%d, score=%d, attack=%f", id, score, attack);
 

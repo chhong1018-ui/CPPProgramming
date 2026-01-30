@@ -1,12 +1,17 @@
 #include <iostream>
 #include "Player.h"
+#include <vector>
 
 int main()
 {
+	std::vector<int> array;
+	//array.push_back(10); //보다는 emplace_back 사용
+	array.emplace_back(10);
+
 	// 객체를 파일에 쓰기. (파일 직렬화).
 	Player player(3, 200, 30.0f);
 	//Player player;
-	Player Serialize("PlayerData.Txt");
+	player.Serialize("PlayerData.Txt");
 	//Player Deserialize("PlayerData.Txt");
 
 	// 문자열 입출력.
@@ -14,11 +19,11 @@ int main()
 	float pi = 3.141592f;
 
 	char formatString[256] = {};
-	sprintf_s(formatString, 256, "score=%d pi=%f", score, pi);
+	sprintf_s(formatString, 256, "score=%d pi=%f", &score, &pi);
 
 	int intValue = 0;
 	float floatValue = 0.0f;
-	sscanf_s(formatString, "score=%d pi=%f", intValue, floatValue);
+	sscanf_s(formatString, "score=%d pi=%f", &intValue, &floatValue);
 
 	FILE* file = nullptr;
 	fopen_s(&file, "Test.txt", "rb");
@@ -43,7 +48,7 @@ int main()
 	// 블록 단위로 읽기.
 	// 읽은 데이터를 저장하기 위한 공간.
 	//char buffer[1024] = { };
-	char* buffer = new char[fileSize + 1];
+	char* buffer = new char[fileSize];
 	size_t readSize = fread(buffer, sizeof(char), fileSize + 1, file);
 
 	std::cout << "readSize: " << readSize << "\n";
